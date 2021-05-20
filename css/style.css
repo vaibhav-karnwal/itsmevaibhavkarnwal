@@ -296,6 +296,7 @@ section .title::after{
 }
 .services .card{
     width: 100%;
+    max-height: 700px;
     background: #222;
     border-radius: 6px;
     padding: 20px 25px;
@@ -307,13 +308,16 @@ section .title::after{
 }
 .services .card .box{
     transition: all 0.3s ease;
+    min-height: 540px;
 }
+
 .services .card .box img{
     height:200px;
 }
 .services .card .box .text h2 a{
     font-size:21px;
 	color:white;
+    max-height: 100px;
 	text-shadow: 1px 1px 2px black;
 }
 .services .card .box .date-comments ul .date{
@@ -337,7 +341,7 @@ section .title::after{
 	color:gray;
 }
 .services .card .box .summary{
-    height:210px;
+    max-height: 160px;
     overflow: hidden;
     text-overflow: ellipsis;
 }
