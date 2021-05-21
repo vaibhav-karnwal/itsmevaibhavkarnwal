@@ -1,19 +1,17 @@
 <?php
-//get data from form  
-$name = 'name';
-$email= 'email';
-$message= 'message';
-$to = "vaibhavkarnwal2812@gmail.com";
-$subject = "Mail From website";
-$txt ="Name = ". $name . "\r\n  Email = " . $email . "\r\n Message =" . $message;
-$headers = 'From: <anmolkarnwal2812@gmail.com>' . "\r\n" .
-"Cc : vaibhavkarnwal2812@gmail.com" . "\r\n";
-if($email!=NULL){
-    mail($to ,$subject ,$txt ,$headers);
+
+if(isset($_POST['submit'])){
+    $name=$_POST['name'];
+    $subject="Mail From website";
+    $mailFrom=$_POST['email'];
+    $message=$_POST['message'];
+    
+    
+    $mailTo="vaibhavkarnwal2812@gmail.com";
+    $headers="From:".$mailFrom;
+    $txt="You have receivedan email from".$name".\n\n".$message;
+    
+    mail($mailTo, $subject, $txt, $headers)
+        header(echo "hey, you have sucessfully submitted your message");
 }
-//redirect
-if(mail($to ,$subject ,$txt ,$headers)){
-    echo "Mail Sent";   
-}else{
-    echo "Mail Failed";
 ?>
