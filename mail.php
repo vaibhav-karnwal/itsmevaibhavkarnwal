@@ -11,8 +11,10 @@ if(isset($_POST['submit'])){
     $headers="From:".$mailFrom;
     $txt="You have receivedan email from".$name".\n\n".$message;
     
-    mail($mailTo, $subject, $txt, $headers)
-        //redirect
+    if($email!=NULL){
+        mail($mailTo,$subject,$txt,$headers);
+    }
+    //redirect
     header("Location:thankyou.html");
 }
 ?>
