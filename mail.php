@@ -12,6 +12,6 @@ if(isset($_POST['submit'])){
     $txt="You have receivedan email from".$name".\n\n".$message;
     
     mail($mailTo, $subject, $txt, $headers)
-        header(echo "hey, you have sucessfully submitted your message");
+        header("Thankyou.html");
 }
 ?>
